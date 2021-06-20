@@ -5,6 +5,24 @@
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 
-function maxChar(str) {}
+function maxChar(str) {
+    'use strict'
+    const cnt = Object.create(null)  // char count; safe way to use object as map
+    let maxC = '';      // char with max freq
+    let maxN = 0;       // freq of maxC
+
+    for (const char of str) {
+        cnt[char] = cnt[char] + 1 || 1
+    }
+
+    for (const k in cnt) {
+        if (cnt[k] > maxN) {
+            maxC = k;
+            maxN = cnt[k];
+        }
+    }
+
+    return maxC
+}
 
 module.exports = maxChar;
