@@ -2,6 +2,10 @@
 // Implement classes Node and Linked Lists
 // See 'directions' document
 
+// Ask if we'll be writing any addional methods if asked to write, e.g.,
+// .getFirst to avoid refactoring/unneeded code. Just write getAt, insertAt,
+// deleteAt, and size, and then write the other methods as special cases of each.
+
 class Node {
     constructor(data, next = null) {
         this.data = data;
@@ -15,7 +19,7 @@ class LinkedList {
     }
 
     insertFirst(data) {
-        this.head = new Node(data, this.head);
+        this.insertAt(data, 0);
     }
 
     size() {
@@ -31,24 +35,11 @@ class LinkedList {
     }
 
     getFirst() {
-        return this.head;
+        return this.getAt(0);
     }
 
     getLast() {
-        let node = this.head;
-
-        if (!node) {
-            return null;
-        }
-
-        while (node) {
-            if (!node.next) {
-                return node;
-            }
-            node = node.next;
-        }
-
-        return last;
+        return this.getAt(this.size() - 1);
     }
 
     clear() {
@@ -56,63 +47,16 @@ class LinkedList {
     }
 
     removeFirst() {
-        if (!this.head) {
-            return;
-        }
-
-        this.head = this.head.next;
+        this.removeAt(0);
     }
 
     removeLast() {
-        let previous = this.head;
-
-        if (!previous) {
-            return;
-        }
-
-        let node = previous.next;
-
-        if (!node) {
-            this.head = null;
-            return;
-        }
-
-        while (node.next) {
-            previous = node;
-            node = node.next;
-        }
-
-        previous.next = null;
+        this.removeAt(this.size() - 1);
     }
 
     insertLast(data) {
-        const last = this.getLast();
-
-        if (last) {
-            // at least one node in linked list
-            last.next = new Node(data);
-            return;
-        }
-
-        // no nodes in linked list
-        this.head = new Node(data);
+        this.insertAt(data, this.size());  // not .size - 1!!!
     }
-
-    // insertLast without getLast
-    // insertLast(data) {
-    //     let node = this.head;
-
-    //     if (!node) {
-    //         this.head = new Node(data);
-    //         return;
-    //     }
-
-    //     while (node.next) {
-    //         node = node.next;
-    //     }
-
-    //     node.next = new Node(data);
-    // }
 
     getAt(index) {
         let count = 0;
@@ -136,8 +80,7 @@ class LinkedList {
         }
 
         if (index === 0) {
-            this.removeFirst();
-            // this.head = this.head.next;
+            this.head = this.head.next;
             return;
         }
 
