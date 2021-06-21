@@ -108,6 +108,16 @@ class LinkedList {
         let previous = this.getAt(index - 1) || this.getLast();
         previous.next = new Node(data, previous.next);
     }
+
+    forEach(fn) {
+        let node = this.head;
+        let count = 0;
+        while (node) {
+            fn(node, count);
+            node = node.next;
+            count++;
+        }
+    }
 }
 
 // let x = new LinkedList();
