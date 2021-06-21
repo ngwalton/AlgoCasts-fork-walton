@@ -3,8 +3,12 @@
 // See 'directions' document
 
 // Ask if we'll be writing any addional methods if asked to write, e.g.,
-// .getFirst to avoid refactoring/unneeded code. Just write getAt, insertAt,
-// deleteAt, and size, and then write the other methods as special cases of each.
+// .getFirst to avoid refactoring/unneeded code. Just write .getAt, .insertAt,
+// .deleteAt, and size, and then write the other methods as special cases of each.
+// Write .getAt first as it is used in .insertAt and .deleteAt.
+
+// Interviewers may not ask about .forEach and for..of but bring up especially
+// for..of to use generator/iterator for extra points.
 
 class Node {
     constructor(data, next = null) {
