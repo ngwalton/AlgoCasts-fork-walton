@@ -118,6 +118,15 @@ class LinkedList {
             count++;
         }
     }
+
+    // iterator to allow using linkedList with for..of
+    *[Symbol.iterator]() {
+        let node = this.head;
+        while (node) {
+            yield node;
+            node = node.next;
+        }
+    }
 }
 
 // let x = new LinkedList();
