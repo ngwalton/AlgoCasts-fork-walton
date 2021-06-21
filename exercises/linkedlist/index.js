@@ -5,7 +5,8 @@
 // Ask if we'll be writing any addional methods if asked to write, e.g.,
 // .getFirst to avoid refactoring/unneeded code. Just write .getAt, .insertAt,
 // .deleteAt, and size, and then write the other methods as special cases of each.
-// Write .getAt first as it is used in .insertAt and .deleteAt.
+// Write .getAt first as it is used in .insertAt and .deleteAt. Follow by
+// .insertAt as you can't delete anything without having something entered.
 
 // Interviewers may not ask about .forEach and for..of but bring up especially
 // for..of to use generator/iterator for extra points.
@@ -22,8 +23,20 @@ class LinkedList {
         this.head = null;
     }
 
-    insertFirst(data) {
-        this.insertAt(data, 0);
+    getAt(index) {
+        let count = 0;
+        let node = this.head;
+
+        while (node) {
+            if (count === index) {
+                return node;
+            }
+
+            node = node.next;
+            count++;
+        }
+
+        return null;
     }
 
     size() {
@@ -46,36 +59,28 @@ class LinkedList {
         return this.getAt(this.size() - 1);
     }
 
-    clear() {
-        this.head = null;
+    insertAt(data, index) {
+        if (!this.head) {
+            this.head = new Node(data);
+            return;
+        }
+
+        if (index === 0) {
+            this.head = new Node(data, this.head);
+            return;
+        }
+
+        // handle case index is out of bounds
+        let previous = this.getAt(index - 1) || this.getLast();
+        previous.next = new Node(data, previous.next);
     }
 
-    removeFirst() {
-        this.removeAt(0);
-    }
-
-    removeLast() {
-        this.removeAt(this.size() - 1);
+    insertFirst(data) {
+        this.insertAt(data, 0);
     }
 
     insertLast(data) {
         this.insertAt(data, this.size());  // not .size - 1!!!
-    }
-
-    getAt(index) {
-        let count = 0;
-        let node = this.head;
-
-        while (node) {
-            if (count === index) {
-                return node;
-            }
-
-            node = node.next;
-            count++;
-        }
-
-        return null;
     }
 
     removeAt(index) {
@@ -97,20 +102,16 @@ class LinkedList {
         previous.next = previous.next.next;
     }
 
-    insertAt(data, index) {
-        if (!this.head) {
-            this.head = new Node(data);
-            return;
-        }
+    removeFirst() {
+        this.removeAt(0);
+    }
 
-        if (index === 0) {
-            this.head = new Node(data, this.head);
-            return;
-        }
+    removeLast() {
+        this.removeAt(this.size() - 1);
+    }
 
-        // handle case index is out of bounds
-        let previous = this.getAt(index - 1) || this.getLast();
-        previous.next = new Node(data, previous.next);
+    clear() {
+        this.head = null;
     }
 
     forEach(fn) {
