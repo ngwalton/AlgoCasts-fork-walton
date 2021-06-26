@@ -25,6 +25,34 @@ class Node {
     }
 }
 
-class Tree { }
+class Tree {
+    constructor() {
+        this.root = null;
+    }
+
+    // breath first
+    // reverse queue
+    traverseBF(fn) {
+        const nodes = [this.root];
+
+        while (nodes.length) {
+            const node = nodes.shift();
+            nodes.push(...node.children);
+            fn(node);
+        }
+    }
+
+    // depth first
+    // reverse stack
+    traverseDF(fn) {
+        const nodes = [this.root];
+
+        while (nodes.length) {
+            const node = nodes.shift();
+            nodes.unshift(...node.children);
+            fn(node);
+        }
+    }
+}
 
 module.exports = { Tree, Node };
