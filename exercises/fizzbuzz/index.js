@@ -13,16 +13,20 @@
 //   buzz
 
 function fizzBuzz(n) {
-    for (let i = 1; i <= n; i++) {
-        mult3 = i % 3 === 0;
-        mult5 = i % 5 === 0;
+    const fizz = "fizz";
+    const buzz = "buzz";
 
-        if (mult3 && mult5) {
-            console.log('fizzbuzz');
-        } else if (mult3) {
-            console.log('fizz');
-        } else if (mult5) {
-            console.log('buzz');
+    for (let i = 1; i <= n; i++) {
+        let isMult3 = i % 3 === 0;
+        let isMult5 = i % 5 === 0;
+
+        // this is multiples of 15
+        if (isMult3 && isMult5) {
+            console.log(fizz + buzz);
+        } else if (isMult3) {
+            console.log(fizz);
+        } else if (isMult5) {
+            console.log(buzz);
         } else {
             console.log(i);
         }
