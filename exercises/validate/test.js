@@ -21,3 +21,14 @@ test('Validate recognizes an invalid BST', () => {
 
   expect(validate(n)).toEqual(false);
 });
+
+test('Validate recognizes an invalid BST with zeros/duplicate values, root left is null', () => {
+  const n = new Node(0);
+  n.insert(5);
+  n.insert(15);
+  n.insert(1);
+  n.insert(20);
+  n.right.data = 0;
+
+  expect(validate(n)).toEqual(false);
+});
