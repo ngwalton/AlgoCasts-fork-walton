@@ -12,6 +12,17 @@ function capitalize(str) {
 }
 
 // function capitalize(str) {
+//     sep = ', :;?'
+//     caps = str[0].toUpperCase();
+
+//     for (let i = 1; i < str.length; i++) {
+//         caps += sep.includes(str[i - 1]) ? str[i].toUpperCase() : str[i];
+//     }
+
+//     return caps;
+// }
+
+// function capitalize(str) {
 //     let caps = str[0].toUpperCase();
 
 //     for (let i = 1; i < str.length; i++) {
