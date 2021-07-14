@@ -9,6 +9,17 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 // function chunk(array, size) {
+//     array_cp = Array.from(array);
+//     const result = [];
+
+//     while (array_cp.length) {
+//         result.push(array_cp.splice(0, size));
+//     }
+
+//     return result;
+// }
+
+// function chunk(array, size) {
 //     const out = [];
 
 //     for (const i of array) {
