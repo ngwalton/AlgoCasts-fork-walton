@@ -19,36 +19,34 @@
 //     return result;
 // }
 
-// function chunk(array, size) {
-//     const out = [];
+// function chunk(array = [], size = array.length) {
+//     const chunked = [];
 
-//     for (const i of array) {
-//         const last = out[out.length - 1]
+//     for (const item of array) {
+//         const last = chunked[chunked.length - 1];
 
 //         // if last is undefined (first iteration) or last is already full,
 //         // add a new array with the current element in it
 //         if (!last || last.length === size) {
-//             out.push([i]);
+//             chunked.push([item]);
 //         } else {  // else just add the current element to the last chunk
-//             last.push(i)
+//             last.push(item);
 //         }
 //     }
 
-//     return out;
+//     return chunked;
 // }
 
-function chunk(array, size) {
+function chunk(array = [], size = array.length) {
     let start = 0;
-    let end = size;
-    const out = [];
+    const chunked = [];
 
     while (start < array.length) {
-        out.push(array.slice(start, end));
+        chunked.push(array.slice(start, start + size));
         start += size;
-        end += size;
     }
 
-    return out;
+    return chunked;
 }
 
 module.exports = chunk;
