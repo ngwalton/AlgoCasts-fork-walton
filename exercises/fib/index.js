@@ -8,12 +8,12 @@
 // Example:
 //   fib(4) === 3
 
-function memoize(fn) {
+function memoise(fn) {
     const cache = Object.create(null);
 
     return function (...args) {
         if (!cache[args]) {
-            cache[args] = fn.apply(this, args);
+            cache[args] = fn(...args);
         }
 
         return cache[args];
@@ -21,14 +21,16 @@ function memoize(fn) {
 }
 
 function fib(n) {
-    if (n < 2) {
-        return n;
+    if (n < 1) {
+        return 0;
+    } else if (n === 1) {
+        return 1
     }
 
-    return fib(n - 2) + fib(n - 1);
+    return fib(n - 1) + fib(n - 2);
 }
 
-fib = memoize(fib);
+fib = memoise(fib);
 
 // function fib(n, result = [0, 1]) {
 //     if (result.length > n) {
