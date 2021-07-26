@@ -1,8 +1,9 @@
+# from typing import Callable
 import functools
 
 
 @functools.cache
-def fib(n):
+def fib(n: int) -> int:
     if n < 1:
         return 0
     elif n == 1:
@@ -12,7 +13,7 @@ def fib(n):
 
 
 # hand written memoization
-# def memoise(fn):
+# def memoise(fn: Callable) -> Callable[[int], int]:
 #     cache = {}
 
 #     def fn_out(*args):
@@ -27,7 +28,7 @@ def fib(n):
 # fib = memoise(fib)
 
 # iterative
-# def fib(n):
+# def fib(n: int) -> int:
 #     if n < 1:
 #         return 0
 #     elif n == 1:
