@@ -14,7 +14,7 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n, row = 0, level = '') {
+function pyramid(n, row = 0, level = "") {
     const width = n * 2 - 1;
     const midpoint = Math.floor(width / 2);
 
@@ -27,25 +27,30 @@ function pyramid(n, row = 0, level = '') {
         return pyramid(n, row + 1);
     }
 
-    isHash = midpoint - row <= level.length && midpoint + row >= level.length;
-    level += isHash ? '#' : ' ';
+    let right = midpoint + row;
+    let left = midpoint - row;
+    let isHash = level.length >= left && level.length <= right;
+    level += isHash ? "#" : " ";
 
-    pyramid(n, row, level);
+    return pyramid(n, row, level);
 }
 
 // function pyramid(n) {
-//     'use strict';
+//     "use strict";
+
 //     const width = n * 2 - 1;
 //     const midpoint = Math.floor(width / 2);
 
 //     for (let row = 0; row < n; row++) {
-//         let level = '';
+//         let level = "";
+
 //         for (let col = 0; col < width; col++) {
-//             if (midpoint - row <= col && midpoint + row >= col) {
-//                 level += '#';
-//             } else {
-//                 level += ' ';
-//             }
+//             // if col is greater than the left most hash column and less than
+//             // the right most hash column, add a hash mark, else add a space
+//             let right = midpoint + row;
+//             let left = midpoint - row;
+//             let isHash = col >= left && col <= right;
+//             level += isHash ? "#" : " "
 //         }
 
 //         console.log(level);
