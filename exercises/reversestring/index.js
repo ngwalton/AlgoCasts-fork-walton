@@ -20,9 +20,25 @@ function reverse(str) {
 
 // function reverse(str) {
 //     let out = '';
-//     debugger;
 //     for (const v of str) out = v + out;
 //     return out;
+// }
+
+
+// function reverse(str) {
+//     const tmp = [];
+//     const midPoint = Math.floor(str.length / 2);
+//     const iter = Array(midPoint).fill().map((_, i) => i);
+
+//     for (let i of iter) {
+//         [tmp[i], tmp[str.length - 1 - i]] = [str[str.length - 1 - i], str[i]];
+//     }
+
+//     if (str.length % 2) {
+//         tmp[midPoint] = str[midPoint]
+//     }
+
+//     return tmp.join('');
 // }
 
 module.exports = reverse;
