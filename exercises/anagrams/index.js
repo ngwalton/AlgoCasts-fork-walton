@@ -8,11 +8,12 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+
 function anagrams(stringA, stringB) {
     'use strict';
     function clean(str) {
         return str
-            .replace(/[^\w]/g, '')
+            .replace(/\W/g, '')
             .toLowerCase()
             .split('')
             .sort()
@@ -22,10 +23,46 @@ function anagrams(stringA, stringB) {
     return clean(stringA) === clean(stringB);
 }
 
+
+// function anagrams(stringA, stringB) {
+//     'use strict';
+//     const lookup = [];
+
+//     for (const el of stringA) {
+//         if (/\W/.test(el)) {
+//             continue;
+//         }
+
+//         let code = el.toLowerCase().charCodeAt(0);
+//         lookup[code] = lookup[code] + 1 || 1
+//     }
+
+//     for (const el of stringB) {
+//         if (/\W/.test(el)) {
+//             continue;
+//         }
+
+//         let code = el.toLowerCase().charCodeAt(0);
+
+//         if (!lookup[code]) {
+//             return false;
+//         }
+
+//         lookup[code]--
+//     }
+
+//     if (lookup.reduce((total, el) => total + el)) {
+//         return false;
+//     }
+
+//     return true
+// }
+
+
 // function anagrams(stringA, stringB) {
 //     'use strict';
 //     function mkMapObj(string) {
-//         string = string.replace(/[^\w]/g, '').toLowerCase();
+//         string = string.replace(/\W/g, '').toLowerCase();
 //         const map = Object.create(null);
 
 //         for (const char of string) {
