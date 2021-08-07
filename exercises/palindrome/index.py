@@ -6,7 +6,17 @@ def palindrome(s: str) -> bool:
     return s == s[::-1]
 
 
-# brut force and most efficient -- O(N)
+# brute force reverse -- O(N)
+# def palindrome(s):
+#     rev = ""
+
+#     for char in s:
+#         rev = char + rev
+
+#     return rev == s
+
+
+# brute force and most efficient -- O(N)
 # def palindrome(s: str) -> bool:
 #     mid = floor(len(s) / 2)
 
