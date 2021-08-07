@@ -1,5 +1,19 @@
 # from typing import Callable
 import functools
+# from typing import Dict
+
+
+# def fib(n: int, cache: Dict = {}) -> int:
+#     if n < 1:
+#         return 0
+
+#     if n == 1:
+#         return 1
+
+#     if n not in cache:
+#         cache[n] = fib(n-1) + fib(n-2)
+
+#     return cache[n]
 
 
 @functools.cache
