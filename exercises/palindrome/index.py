@@ -20,7 +20,7 @@ def palindrome(s: str) -> bool:
 # list comp -- O(N)
 # def palindrome(s: str) -> bool:
 #     mid = floor(len(s) / 2)
-#     matched = [s[i] == s[len(s) - 1 - i] for i in range(mid)]
+#     matched = [s[i] == s[-i - 1] for i in range(mid)]
 #     return all(matched)
 
 
