@@ -24,6 +24,12 @@ def palindrome(s: str) -> bool:
 #     return all(matched)
 
 
+# less efficient as iterates accross all items
+# def palindrome(s: str) -> bool:
+#     matched = [v == s[-i - 1] for i, v in enumerate(s)]
+#     return all(matched)
+
+
 # functional but less efficient -- still O(N)
 # def palindrome(s: str) -> bool:
 #     chars = list(s)
