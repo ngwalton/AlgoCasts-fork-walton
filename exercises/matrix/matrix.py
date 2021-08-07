@@ -1,4 +1,7 @@
-def matrix(n):
+from typing import List
+
+
+def matrix(n: int) -> List[List[int]]:
     results = [[None for j in range(n)] for i in range(n)]
     count = 1
     rowStart = 0
