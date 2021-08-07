@@ -7,7 +7,10 @@ values to simplify testing.
 """
 
 
-def fizz_buzz(n: int) -> list:
+from typing import List, Union
+
+
+def fizz_buzz(n: int) -> List[Union[int, str]]:
     fizz = "fizz"
     buzz = "buzz"
     result_for_test = []
