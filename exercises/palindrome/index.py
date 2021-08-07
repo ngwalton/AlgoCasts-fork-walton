@@ -7,7 +7,7 @@ def palindrome(s: str) -> bool:
 
 
 # brute force reverse -- O(N)
-# def palindrome(s):
+# def palindrome(s: str) -> bool:
 #     rev = ""
 
 #     for char in s:
