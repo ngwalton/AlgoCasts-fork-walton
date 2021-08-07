@@ -1,15 +1,20 @@
 from math import floor
 
 
-# brut force and most efficient -- O(N)
+# pythonic way -- O(N)
 def palindrome(s: str) -> bool:
-    mid = floor(len(s) / 2)
+    return s == s[::-1]
 
-    for i in range(mid):
-        if s[i] != s[len(s) - 1 - i]:
-            return False
 
-    return True
+# brut force and most efficient -- O(N)
+# def palindrome(s: str) -> bool:
+#     mid = floor(len(s) / 2)
+
+#     for i in range(mid):
+#         if s[i] != s[len(s) - 1 - i]:
+#             return False
+
+#     return True
 
 
 # list comp -- O(N)
