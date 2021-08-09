@@ -5,20 +5,22 @@
 // removing it.
 
 class Queue {
+  #data;
   constructor() {
-    this.data = [];
+    this.#data = [];
   }
 
   add(record) {
-    this.data.unshift(record);
+    this.#data.unshift(record);
   }
 
   remove() {
-    return this.data.pop();
+    return this.#data.pop();
   }
 
+  // to see what the next value would/check if there is one
   peek() {
-    return this.data.slice(-1)[0];
+    return this.#data.slice(-1)[0];
   }
 }
 
