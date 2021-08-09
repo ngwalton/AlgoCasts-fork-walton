@@ -9,16 +9,17 @@
 //     q.remove(); // returns 1;
 
 class Queue {
+    #queue;
     constructor() {
-        this.queue = [];
+        this.#queue = [];
     }
 
     add(element) {
-        this.queue.unshift(element);
+        this.#queue.unshift(element);
     }
 
     remove() {
-        return this.queue.pop();
+        return this.#queue.pop();
     }
 }
 
