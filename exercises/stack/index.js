@@ -24,7 +24,7 @@ class Stack {
     }
 
     peek() {
-        return this.stack.slice(-1)[0];
+        return this.stack[this.stack.length - 1];
     }
 }
 
