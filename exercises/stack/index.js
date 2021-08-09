@@ -11,20 +11,21 @@
 //   s.pop(); // returns 1
 
 class Stack {
+    #stack;
     constructor() {
-        this.stack = [];
+        this.#stack = [];
     }
 
     push(record) {
-        this.stack.push(record);
+        this.#stack.push(record);
     }
 
     pop(record) {
-        return this.stack.pop();
+        return this.#stack.pop();
     }
 
     peek() {
-        return this.stack[this.stack.length - 1];
+        return this.#stack[this.#stack.length - 1];
     }
 }
 
