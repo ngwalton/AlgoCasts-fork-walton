@@ -1,6 +1,19 @@
 from math import floor
 
 
+# bubble sort
+def bubble_sort(unsorted):
+    result = unsorted[:]
+
+    for i in range(len(result)-1):
+        for j in range(len(result)-i-1):
+            if result[j] > result[j+1]:
+                [result[j], result[j+1]] = [result[j+1], result[j]]
+
+    return result
+
+
+# merge sort
 def merge(left, right):
     result = []
 

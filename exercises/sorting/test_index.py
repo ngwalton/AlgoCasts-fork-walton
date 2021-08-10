@@ -1,5 +1,5 @@
 import random
-from index import merge_sort, merge
+from index import merge_sort, merge, bubble_sort
 
 
 def test_merge_is_callable():
@@ -21,3 +21,13 @@ def test_merge_sort_sorts_correctly():
     b = a[:]
     random.shuffle(b)
     assert(merge_sort(b) == a)
+
+
+def test_bubble_sort_is_callable():
+    assert(callable(bubble_sort))
+
+
+def test_bubble_sort_sorts_correctly():
+    a = [-124, -40, 0, 7, 21, 100, 500]
+    b = [100, -40, 500, -124, 0, 21, 7]
+    assert(bubble_sort(b) == a)
