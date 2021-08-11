@@ -39,3 +39,20 @@ def merge_sort(unsorted: List[int]) -> List[int]:
     right = unsorted[center:]
 
     return merge(merge_sort(left), merge_sort(right))
+
+
+# select sort
+def select_sort(unsorted: List[int]) -> List[int]:
+    result = unsorted.copy()
+
+    for i in range(len(result)):
+        min_index = i
+
+        for j in range(i+1, len(result)):
+            if result[j] < result[min_index]:
+                min_index = j
+
+        if i != min_index:
+            result[i], result[min_index] = result[min_index], result[i]
+
+    return result
