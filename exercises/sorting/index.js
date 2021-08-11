@@ -4,6 +4,8 @@
 // O(n^2)
 // iteratively push the max value to arr.length - i
 function bubbleSort(arr) {
+    arr = arr.map(el => el);
+
     // "i < arr.length - 1" because there would be a single iteration at the end
     // in the outer loop that did nothing in the inner loop without the "-1"
     for (let i = 0; i < arr.length - 1; i++) {
@@ -24,6 +26,8 @@ function bubbleSort(arr) {
 // O(n^2)
 // iteratively find the min value in i through arr.length and swap it with i
 function selectionSort(arr) {
+    arr = arr.map(el => el);
+
     for (let i = 0; i < arr.length; i++) {
         // "assume i is the min value and then try to prove this wrong"
         let indexOfMin = i;
@@ -43,7 +47,7 @@ function selectionSort(arr) {
     return arr;
 }
 
-// O(n logn)
+// O(n log n)
 // divide and conquer
 function mergeSort(arr) {
     if (arr.length === 1) {
