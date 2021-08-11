@@ -1,8 +1,9 @@
 from math import floor
+from typing import List
 
 
 # bubble sort
-def bubble_sort(unsorted):
+def bubble_sort(unsorted: List[int]) -> List[int]:
     result = unsorted[:]
 
     for i in range(len(result)-1):
@@ -14,7 +15,7 @@ def bubble_sort(unsorted):
 
 
 # merge sort
-def merge(left, right):
+def merge(left: List[int], right: List[int]) -> List[int]:
     result = []
 
     while left and right:
@@ -29,7 +30,7 @@ def merge(left, right):
     return result
 
 
-def merge_sort(unsorted):
+def merge_sort(unsorted: List[int]) -> List[int]:
     if len(unsorted) == 1:
         return unsorted
 
