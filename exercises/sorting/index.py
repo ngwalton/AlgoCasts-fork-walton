@@ -4,7 +4,7 @@ from typing import List
 
 # bubble sort
 def bubble_sort(unsorted: List[int]) -> List[int]:
-    result = unsorted[:]
+    result = unsorted.copy()
 
     for i in range(len(result)-1):
         for j in range(len(result)-i-1):
