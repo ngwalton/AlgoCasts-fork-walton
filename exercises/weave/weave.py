@@ -30,6 +30,7 @@ def weave(q1, q2):
     while q1.peek() or q2.peek():
         if q1.peek():
             result.add(q1.remove())
+
         if q2.peek():
             result.add(q2.remove())
 
