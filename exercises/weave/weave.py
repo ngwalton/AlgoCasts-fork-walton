@@ -1,25 +1,27 @@
 # %%
 
+from collections import deque
+
+
 class Queue:
     def __init__(self):
-        self.data = []
+        self._data = deque()
 
     def add(self, record):
-        self.data.insert(0, record)
+        self._data.appendleft(record)
 
     def remove(self):
-        if self.data:
-            return self.data.pop()
+        if self._data:
+            return self._data.pop()
 
     def peek(self):
-        if self.data:
-            return self.data[-1]
+        if self._data:
+            return self._data[-1]
+
         return None
 
     def __repr__(self):
-        rep = self.data[:]
-        rep.reverse()
-        return str(rep)
+        return repr(self._data).replace("deque", "Queue")
 
 
 def weave(q1, q2):
