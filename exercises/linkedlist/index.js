@@ -96,7 +96,7 @@ class LinkedList {
         let previous = this.getAt(index - 1);
         // could use getAt(index + 1), but could be expensive
         // previous.next = this.getAt(index + 1);
-        if (!previous || !previous.next) {
+        if (!previous?.next) {
             return;
         }
         previous.next = previous.next.next;
