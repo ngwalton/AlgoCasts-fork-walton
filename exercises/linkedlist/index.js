@@ -4,8 +4,8 @@
 
 // Ask if we'll be writing any additional methods if asked to write, e.g.,
 // .getFirst to avoid refactoring/unneeded code. Just write .getAt, .insertAt,
-// .removeAt, and size, and then write the other methods as special cases of each.
-// Write .getAt first as it is used in .insertAt and .removeAt. Follow by
+// .removeAt, and size, and then write the other methods as special cases of
+// each. Write .getAt first as it is used in .insertAt and .removeAt. Follow by
 // .insertAt as you can't delete anything without having something entered.
 
 // Interviewers may not ask about .forEach and for..of but bring up especially
