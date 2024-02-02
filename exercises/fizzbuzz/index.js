@@ -13,12 +13,16 @@
 //   buzz
 
 function fizzBuzz(n) {
-    const fizz = "fizz";
-    const buzz = "buzz";
+    const fizz = 'fizz';
+    const buzz = 'buzz';
+
+    function aIsMultOfN(a, n) {
+        return a % n === 0;
+    }
 
     for (let i = 1; i <= n; i++) {
-        let isMult3 = i % 3 === 0;
-        let isMult5 = i % 5 === 0;
+        const isMult3 = aIsMultOfN(i, 3);
+        const isMult5 = aIsMultOfN(i, 5);
 
         // this is multiples of 15
         if (isMult3 && isMult5) {
