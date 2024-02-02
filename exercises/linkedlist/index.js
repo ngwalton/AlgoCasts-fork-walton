@@ -39,26 +39,6 @@ class LinkedList {
         return null;
     }
 
-    size() {
-        let node = this.head;
-        let count = 0;
-
-        while (node) {
-            count++;
-            node = node.next;
-        }
-
-        return count;
-    }
-
-    getFirst() {
-        return this.getAt(0);
-    }
-
-    getLast() {
-        return this.getAt(this.size() - 1);
-    }
-
     insertAt(data, index) {
         if (!this.head) {
             this.head = new Node(data);
@@ -73,14 +53,6 @@ class LinkedList {
         // handle case index is out of bounds
         let previous = this.getAt(index - 1) || this.getLast();
         previous.next = new Node(data, previous.next);
-    }
-
-    insertFirst(data) {
-        this.insertAt(data, 0);
-    }
-
-    insertLast(data) {
-        this.insertAt(data, this.size());  // not .size - 1!!!
     }
 
     removeAt(index) {
@@ -104,16 +76,44 @@ class LinkedList {
         previous.next = previous.next.next;
     }
 
+    size() {
+        let count = 0;
+        let node = this.head;
+
+        while (node) {
+            node = node.next;
+            count++;
+        }
+
+        return count;
+    }
+
+    clear() {
+        this.head = null;
+    }
+
+    getFirst() {
+        return this.getAt(0);
+    }
+
+    getLast() {
+        return this.getAt(this.size() - 1);
+    }
+
+    insertFirst(data) {
+        this.insertAt(data, 0);
+    }
+
+    insertLast(data) {
+        this.insertAt(data, this.size());  // not .size - 1!!!
+    }
+
     removeFirst() {
         this.removeAt(0);
     }
 
     removeLast() {
         this.removeAt(this.size() - 1);
-    }
-
-    clear() {
-        this.head = null;
     }
 
     forEach(fn) {
