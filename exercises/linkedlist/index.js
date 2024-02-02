@@ -2,7 +2,7 @@
 // Implement classes Node and Linked Lists
 // See 'directions' document
 
-// Ask if we'll be writing any addional methods if asked to write, e.g.,
+// Ask if we'll be writing any additional methods if asked to write, e.g.,
 // .getFirst to avoid refactoring/unneeded code. Just write .getAt, .insertAt,
 // .deleteAt, and size, and then write the other methods as special cases of each.
 // Write .getAt first as it is used in .insertAt and .deleteAt. Follow by
