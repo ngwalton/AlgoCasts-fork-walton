@@ -94,11 +94,13 @@ class LinkedList {
         }
 
         let previous = this.getAt(index - 1);
+
         // could use getAt(index + 1), but could be expensive
         // previous.next = this.getAt(index + 1);
         if (!previous?.next) {
             return;
         }
+
         previous.next = previous.next.next;
     }
 
@@ -117,6 +119,7 @@ class LinkedList {
     forEach(fn) {
         let node = this.head;
         let count = 0;
+
         while (node) {
             fn(node, count);
             node = node.next;
@@ -127,6 +130,7 @@ class LinkedList {
     // iterator to allow using linkedList with for..of
     *[Symbol.iterator]() {
         let node = this.head;
+
         while (node) {
             yield node;
             node = node.next;
