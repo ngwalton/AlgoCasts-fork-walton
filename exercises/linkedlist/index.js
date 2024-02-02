@@ -51,7 +51,7 @@ class LinkedList {
         }
 
         // handle case index is out of bounds
-        let previous = this.getAt(index - 1) || this.getLast();
+        const previous = this.getAt(index - 1) || this.getLast();
         previous.next = new Node(data, previous.next);
     }
 
@@ -65,7 +65,7 @@ class LinkedList {
             return;
         }
 
-        let previous = this.getAt(index - 1);
+        const previous = this.getAt(index - 1);
 
         // could use getAt(index + 1), but could be expensive
         // previous.next = this.getAt(index + 1);
