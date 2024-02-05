@@ -69,6 +69,7 @@ class LinkedList {
 
         // could use getAt(index + 1), but could be expensive
         // previous.next = this.getAt(index + 1);
+        // use optional chaining to check if previous or next are undefined
         if (!previous?.next) {
             return;
         }
