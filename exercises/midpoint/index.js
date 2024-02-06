@@ -18,7 +18,7 @@ function midpoint(list) {
     // fast movers forward two steps at a time
     let slow = fast = list.getFirst();
 
-    while (fast.next && fast.next.next) {  // check if fast has somewhere to go
+    while (fast?.next?.next) {  // check if fast has somewhere to go
         fast = fast.next.next;
         slow = slow.next;
     }
