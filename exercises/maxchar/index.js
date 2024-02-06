@@ -15,10 +15,10 @@ function maxChar(str) {
         cnt[char] = cnt[char] + 1 || 1
     }
 
-    for (const k in cnt) {
-        if (cnt[k] > maxN) {
+    for (const [k, v] of Object.entries(cnt)) {
+        if (v > maxN) {
             maxC = k;
-            maxN = cnt[k];
+            maxN = v;
         }
     }
 
