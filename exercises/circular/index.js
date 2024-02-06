@@ -22,7 +22,6 @@ function circular(list) {
 
         if (slow === fast) {
             return true;
-            break
         }
     }
 
