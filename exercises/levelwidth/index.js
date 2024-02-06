@@ -13,7 +13,7 @@
 
 function levelWidth(root) {
     const counters = [0];
-    const sep = 's';
+    const sep = null;
     const nodes = [root, sep];
 
     while (nodes.length > 1) {
