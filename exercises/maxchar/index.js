@@ -7,22 +7,22 @@
 
 function maxChar(str) {
     'use strict'
-    const cnt = Object.create(null)  // char count; safe way to use object as map
-    let maxC = '';      // char with max freq
-    let maxN = 0;       // freq of maxC
+    const lookup = Object.create(null)  // char count; safe way to use object as map
+    let charMax = '';      // char with max freq
+    let nMax = 0;          // freq of charMax
 
     for (const char of str) {
-        cnt[char] = cnt[char] + 1 || 1
+        lookup[char] = lookup[char] + 1 || 1
     }
 
-    for (const [k, v] of Object.entries(cnt)) {
-        if (v > maxN) {
-            maxC = k;
-            maxN = v;
+    for (const [key, val] of Object.entries(lookup)) {
+        if (val > nMax) {
+            charMax = key;
+            nMax = val;
         }
     }
 
-    return maxC
+    return charMax
 }
 
 module.exports = maxChar;
