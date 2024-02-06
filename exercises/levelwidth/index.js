@@ -16,11 +16,14 @@ function levelWidth(root) {
     const sep = null;
     const nodes = [root, sep];
 
+    // use .length > 1 because of the sep character
     while (nodes.length > 1) {
         const node = nodes.shift();
 
         if (node === sep) {
             widths.push(0);
+
+            // move sep to the end denoting the end of the next level of nodes
             nodes.push(sep);
             continue;
         }
