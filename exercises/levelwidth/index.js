@@ -22,10 +22,11 @@ function levelWidth(root) {
         if (node === sep) {
             counters.push(0);
             nodes.push(sep);
-        } else {
-            nodes.push(...node.children);
-            counters[counters.length - 1]++;
+            continue;
         }
+
+        nodes.push(...node.children);
+        counters[counters.length - 1]++;
     }
 
     return counters;
