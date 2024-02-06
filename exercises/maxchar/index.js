@@ -14,8 +14,9 @@ function maxChar(str) {
         lookup[code] = lookup[code] + 1 || 1;
     }
 
-    // can't use Math.max because of empty values
-    const nMax = lookup.reduce((max, next) => next > max ? next : max);
+    // can't use Math.max(...lookup) because of empty values
+    // also avoids issue with passing too many args to Math.max
+    const nMax = lookup.reduce((max, next) => Math.max(max, next));
     const codeMax = lookup.indexOf(nMax);
 
     return String.fromCharCode(codeMax);
