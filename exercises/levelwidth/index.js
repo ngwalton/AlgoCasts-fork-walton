@@ -12,7 +12,7 @@
 // Answer: [1, 3, 2]
 
 function levelWidth(root) {
-    const counters = [0];
+    const widths = [0];
     const sep = null;
     const nodes = [root, sep];
 
@@ -20,16 +20,16 @@ function levelWidth(root) {
         const node = nodes.shift();
 
         if (node === sep) {
-            counters.push(0);
+            widths.push(0);
             nodes.push(sep);
             continue;
         }
 
         nodes.push(...node.children);
-        counters[counters.length - 1]++;
+        widths[widths.length - 1]++;
     }
 
-    return counters;
+    return widths;
 }
 
 module.exports = levelWidth;
