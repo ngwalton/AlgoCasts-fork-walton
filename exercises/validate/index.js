@@ -8,8 +8,8 @@
 // function validate(node, min = null, max = null) {
 //     // bst is valid if all are false
 //     const tests = [
-//         min && node.data < min,
-//         max && node.data > max,
+//         min !== null && node.data <= min,
+//         max !== null && node.data >= max,
 //         node.left && !validate(node.left, min, node.data),
 //         node.right && !validate(node.right, node.data, max)
 //     ];
