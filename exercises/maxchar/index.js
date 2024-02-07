@@ -10,7 +10,7 @@ function maxChar(str) {
     const lookup = [];
 
     for (const char of str) {
-        const code = char.charCodeAt(0);
+        const code = char.codePointAt(0);
         lookup[code] = lookup[code] + 1 || 1;
     }
 
@@ -19,7 +19,7 @@ function maxChar(str) {
     const nMax = lookup.reduce((max, next) => Math.max(max, next));
     const codeMax = lookup.indexOf(nMax);
 
-    return String.fromCharCode(codeMax);
+    return String.fromCodePoint(codeMax);
 }
 
 // function maxChar(str) {
