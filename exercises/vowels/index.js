@@ -10,24 +10,27 @@
 function vowels(str) {
     'use strict';
     const matches = str.match(/[aeiou]/gi);
-    return matches ? matches.length : 0;
+    return matches?.length || 0;
 }
 
 // function vowels(str) {
 //     'use strict';
-//     const vowelArray = ['a', 'e', 'i', 'o', 'u'];
-//     return str.toLowerCase().split('').filter(char => vowelArray.includes(char)).length;
+//     const aeiou = ['a', 'e', 'i', 'o', 'u'];
+
+//     return str
+//         .toLowerCase()
+//         .split('')
+//         .filter(char => aeiou.includes(char))
+//         .length;
 // }
 
 // function vowels(str) {
 //     'use strict';
-//     const vowelArray = ['a', 'e', 'i', 'o', 'u'];
+//     const aeiou = ['a', 'e', 'i', 'o', 'u'];
 //     let count = 0;
 
 //     for (const char of str.toLowerCase()) {
-//         if (vowelArray.includes(char)) {
-//             count++;
-//         }
+//         aeiou.includes(char) && count++;
 //     }
 
 //     return count;
