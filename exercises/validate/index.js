@@ -18,6 +18,8 @@
 // }
 
 function validate(node, min = null, max = null) {
+    // use !== null in case min or max are 0
+    // use <=/>= in case same value appears twice
     if (min !== null && node.data <= min) {
         return false;
     }
