@@ -9,7 +9,7 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-    out = n.toString().split('').reverse().join('');
+    const out = n.toString().split('').reverse().join('');
     return parseInt(out) * Math.sign(n);  // parseInt removes trailing '-'
 }
 
