@@ -24,7 +24,7 @@
 
 const Queue = require('./queue');
 
-// check that a queue not undefined
+// check that a queue is not undefined
 function def(queue) {
     return queue.peek() !== undefined;
 }
