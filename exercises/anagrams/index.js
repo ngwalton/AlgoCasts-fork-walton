@@ -13,7 +13,7 @@ function anagrams(stringA, stringB) {
     'use strict';
     function clean(str) {
         return str
-            .replace(/\W/g, '')
+            .replace(/[^a-z0-9]/gi, '')
             .toLowerCase()
             .split('')
             .sort()
@@ -27,42 +27,39 @@ function anagrams(stringA, stringB) {
 // function anagrams(stringA, stringB) {
 //     'use strict';
 //     const lookup = [];
+//     const re = /[^a-z0-9]/i;
 
-//     for (const el of stringA) {
-//         if (/\W/.test(el)) {
+//     for (const char of stringA) {
+//         if (re.test(char)) {
 //             continue;
 //         }
 
-//         let code = el.toLowerCase().charCodeAt(0);
-//         lookup[code] = lookup[code] + 1 || 1
+//         const code = char.toLowerCase().codePointAt(0);
+//         lookup[code] = lookup[code] + 1 || 1;
 //     }
 
-//     for (const el of stringB) {
-//         if (/\W/.test(el)) {
+//     for (const char of stringB) {
+//         if (re.test(char)) {
 //             continue;
 //         }
 
-//         let code = el.toLowerCase().charCodeAt(0);
+//         const code = char.toLowerCase().codePointAt(0);
 
 //         if (!lookup[code]) {
 //             return false;
 //         }
 
-//         lookup[code]--
+//         lookup[code]--;
 //     }
 
-//     if (lookup.reduce((total, el) => total + el)) {
-//         return false;
-//     }
-
-//     return true
+//     return lookup.reduce((sum, next) => sum + next) === 0;
 // }
 
 
 // function anagrams(stringA, stringB) {
 //     'use strict';
 //     function mkMapObj(string) {
-//         string = string.replace(/\W/g, '').toLowerCase();
+//         string = string.replace(/[^a-z0-9]/gi, '').toLowerCase();
 //         const map = Object.create(null);
 
 //         for (const char of string) {
@@ -82,11 +79,7 @@ function anagrams(stringA, stringB) {
 //         return false;
 //     }
 
-//     if (keysA.some(k => mapA[k] !== mapB[k])) {
-//         return false;
-//     }
-
-//     return true;
+//     return keysA.every(k => mapA[k] === mapB[k]);
 // }
 
 module.exports = anagrams;

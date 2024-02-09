@@ -25,3 +25,9 @@ test('"A tree, a life, a bench" is not an anagram of "A tree, a fence, a yard"',
     anagrams('A tree, a life, a bench', 'A tree, a fence, a yard')
   ).toBeFalsy();
 });
+
+test('"Ab_c" is an anagram of "BCA?"', () => {
+  expect(
+    anagrams('Ab_c', 'BCA?')
+  ).toBeTruthy();
+});
