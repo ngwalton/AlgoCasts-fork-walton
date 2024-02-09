@@ -24,12 +24,17 @@
 
 const Queue = require('./queue');
 
+// check that a queue not undefined
+function def(queue) {
+    return queue.peek() !== undefined;
+}
+
 function weave(sourceOne, sourceTwo) {
     const q = new Queue();
 
-    while (sourceOne.peek() || sourceTwo.peek()) {
-        sourceOne.peek() && q.add(sourceOne.remove());
-        sourceTwo.peek() && q.add(sourceTwo.remove());
+    while (def(sourceOne) || def(sourceTwo)) {
+        def(sourceOne) && q.add(sourceOne.remove());
+        def(sourceTwo) && q.add(sourceTwo.remove());
     }
 
     return q;
