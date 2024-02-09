@@ -8,8 +8,11 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-    const n = Math.floor(str.length / 2);
-    return [...Array(n).keys()].every(i => str[i] === str[str.length - i - 1]);
+    const mid = Math.floor(str.length / 2);
+    const last = str.length - 1;
+
+    // return [...Array(n).keys()].every(i => str[i] === str[str.length - i - 1]);
+    return Array(mid).fill().every((_, i) => str[i] === str[last - i]);
 }
 
 // function palindrome(str) {
