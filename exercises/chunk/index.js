@@ -20,18 +20,15 @@
 // }
 
 // function chunk(array = [], size = array.length) {
-//     const chunked = [];
+//     // initialize chunked with and empty array
+//     const chunked = [[]];
 
 //     for (const item of array) {
-//         const last = chunked[chunked.length - 1];
-
-//         // if last is undefined (first iteration) or last is already full,
-//         // add a new array with the current element in it
-//         if (!last || last.length === size) {
-//             chunked.push([item]);
-//         } else {  // else just add the current element to the last chunk
-//             last.push(item);
+//         if (chunked[chunked.length - 1].length === size) {
+//             chunked.push([]);
 //         }
+
+//         chunked[chunked.length - 1].push(item);
 //     }
 
 //     return chunked;
