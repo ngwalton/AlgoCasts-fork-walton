@@ -9,7 +9,7 @@ def matrix(n: int) -> List[List[int]]:
     colStart = 0
     colEnd = n - 1
 
-    while (rowStart <= rowEnd) & (colStart <= colEnd):
+    while rowStart <= rowEnd and colStart <= colEnd:
         for c in range(colStart, colEnd+1):
             results[rowStart][c] = count
             count += 1
