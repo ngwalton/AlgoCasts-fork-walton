@@ -12,7 +12,7 @@ function memoize(fn) {
     const cache = Object.create(null);
 
     return function (...args) {
-        if (!cache[args]) {
+        if (!(args in cache)) { // allow for falsy values without rerunning fn
             cache[args] = fn(...args);
         }
 
