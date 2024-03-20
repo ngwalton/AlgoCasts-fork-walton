@@ -8,7 +8,7 @@
 // Example:
 //   fib(4) === 3
 
-function memoise(fn) {
+function memoize(fn) {
     const cache = Object.create(null);
 
     return function (...args) {
@@ -27,7 +27,7 @@ function fib(n) {
     return fib(n - 1) + fib(n - 2);
 }
 
-fib = memoise(fib);
+fib = memoize(fib);
 
 // function fib(n, result = [0, 1]) {
 //     if (result.length > n) {
