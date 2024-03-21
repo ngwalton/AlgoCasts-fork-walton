@@ -12,9 +12,9 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {
-    const aIsMultOfN = (a, n) => a % n === 0;
+const aIsMultOfN = (a, n) => a % n === 0;
 
+function fizzBuzz(n) {
     for (let i = 1; i <= n; i++) {
         const fizz = aIsMultOfN(i, 3) ? 'fizz' : '';
         const buzz = aIsMultOfN(i, 5) ? 'buzz' : '';
