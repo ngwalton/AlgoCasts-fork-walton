@@ -45,7 +45,7 @@ function anagrams(stringA, stringB) {
 //         lookup[code]--;
 //     }
 
-//     return lookup.reduce((sum, next) => sum + next) === 0;
+//     return lookup.reduce((sum, next) => sum + next, 0) === 0;
 // }
 
 
