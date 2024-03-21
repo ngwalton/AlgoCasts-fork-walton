@@ -10,16 +10,16 @@
 
 'use strict';
 
-function anagrams(stringA, stringB) {
-    function clean(str) {
-        return str
-            .replace(/[^a-z0-9]/gi, '')
-            .toLowerCase()
-            .split('')
-            .sort()
-            .join('');
-    }
+function clean(str) {
+    return str
+        .replace(/[^a-z0-9]/gi, '')
+        .toLowerCase()
+        .split('')
+        .sort()
+        .join('');
+}
 
+function anagrams(stringA, stringB) {
     return clean(stringA) === clean(stringB);
 }
 
