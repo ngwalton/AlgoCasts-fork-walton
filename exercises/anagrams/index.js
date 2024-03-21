@@ -8,9 +8,9 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+'use strict';
 
 function anagrams(stringA, stringB) {
-    'use strict';
     function clean(str) {
         return str
             .replace(/[^a-z0-9]/gi, '')
@@ -25,7 +25,6 @@ function anagrams(stringA, stringB) {
 
 
 // function anagrams(stringA, stringB) {
-//     'use strict';
 //     const lookup = [];
 //     const re = /[^a-z0-9]/i;
 
@@ -57,7 +56,6 @@ function anagrams(stringA, stringB) {
 
 
 // function anagrams(stringA, stringB) {
-//     'use strict';
 //     function mkMapObj(string) {
 //         string = string.replace(/[^a-z0-9]/gi, '').toLowerCase();
 //         const map = Object.create(null);
