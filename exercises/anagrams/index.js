@@ -29,24 +29,18 @@ function anagrams(stringA, stringB) {
 //     const re = /[\W_]/; // same as /[^a-z0-9]/i
 
 //     for (const char of stringA) {
-//         if (re.test(char)) {
-//             continue;
-//         }
+//         if (re.test(char)) continue;
 
 //         const code = char.toLowerCase().codePointAt(0);
 //         lookup[code] = lookup[code] + 1 || 1;
 //     }
 
 //     for (const char of stringB) {
-//         if (re.test(char)) {
-//             continue;
-//         }
+//         if (re.test(char)) continue;
 
 //         const code = char.toLowerCase().codePointAt(0);
 
-//         if (!lookup[code]) {
-//             return false;
-//         }
+//         if (!lookup[code]) return false;
 
 //         lookup[code]--;
 //     }
