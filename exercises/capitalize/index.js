@@ -12,7 +12,7 @@ function capitalize(str) {
 }
 
 // function capitalize(str) {
-//     sep = ', :;?'
+//     sep = ', :;?';
 //     caps = str[0].toUpperCase();
 
 //     for (let i = 1; i < str.length; i++) {
