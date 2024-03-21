@@ -16,9 +16,7 @@ function fizzBuzz(n) {
     const fizz = 'fizz';
     const buzz = 'buzz';
 
-    function aIsMultOfN(a, n) {
-        return a % n === 0;
-    }
+    const aIsMultOfN = (a, n) => a % n === 0;
 
     for (let i = 1; i <= n; i++) {
         const isMult3 = aIsMultOfN(i, 3);
