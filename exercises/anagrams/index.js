@@ -26,7 +26,7 @@ function anagrams(stringA, stringB) {
 
 // function anagrams(stringA, stringB) {
 //     const lookup = [];
-//     const re = /[^a-z0-9]/i;
+//     const re = /[\W_]/; // same as /[^a-z0-9]/i
 
 //     for (const char of stringA) {
 //         if (re.test(char)) {
