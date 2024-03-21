@@ -12,9 +12,9 @@
 
 function clean(str) {
     return str
-        .replace(/[^a-z0-9]/gi, '')
         .toLowerCase()
         .split('')
+        .filter(char => /[a-z]/.test(char))
         .sort()
         .join('');
 }
