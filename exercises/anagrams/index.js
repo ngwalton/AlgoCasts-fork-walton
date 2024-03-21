@@ -14,7 +14,7 @@ function clean(str) {
     return str
         .toLowerCase()
         .split('')
-        .filter(char => /[a-z]/.test(char))
+        .filter(char => /[a-z0-9]/.test(char))
         .sort()
         .join('');
 }
