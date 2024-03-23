@@ -10,8 +10,7 @@
 'use strict';
 
 function vowels(str) {
-    const matches = str.match(/[aeiou]/gi);
-    return matches?.length || 0;
+    return str.match(/[aeiou]/gi)?.length || 0;
 }
 
 // function vowels(str) {
