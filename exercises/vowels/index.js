@@ -7,14 +7,14 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
+'use strict';
+
 function vowels(str) {
-    'use strict';
     const matches = str.match(/[aeiou]/gi);
     return matches?.length || 0;
 }
 
 // function vowels(str) {
-//     'use strict';
 //     const aeiou = ['a', 'e', 'i', 'o', 'u'];
 
 //     return str
@@ -25,7 +25,6 @@ function vowels(str) {
 // }
 
 // function vowels(str) {
-//     'use strict';
 //     const aeiou = ['a', 'e', 'i', 'o', 'u'];
 //     let count = 0;
 
