@@ -14,7 +14,7 @@ function vowels(str) {
 }
 
 // function vowels(str) {
-//     const aeiou = ['a', 'e', 'i', 'o', 'u'];
+//     const aeiou = 'aeiou';
 
 //     return str
 //         .toLowerCase()
@@ -24,7 +24,7 @@ function vowels(str) {
 // }
 
 // function vowels(str) {
-//     const aeiou = ['a', 'e', 'i', 'o', 'u'];
+//     const aeiou = 'aeiou';
 //     let count = 0;
 
 //     for (const char of str.toLowerCase()) {
